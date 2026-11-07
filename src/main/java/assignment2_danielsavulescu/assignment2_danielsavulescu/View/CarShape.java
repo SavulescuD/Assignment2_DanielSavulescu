@@ -29,5 +29,13 @@ public class CarShape extends Group {
         Rectangle window2 = new Rectangle(51, 5, 13, 9);
         window1.setFill(Color.LIGHTSKYBLUE);
         window2.setFill(Color.LIGHTSKYBLUE);
+        
+        //Lights
+        Rectangle headLight = new Rectangle(94, 22, 6, 5);
+        headLight.setFill(Color.LIGHTGOLDENRODYELLOW);
+        Rectangle tailLight = new Rectangle(0, 22, 4, 5);
+        tailLight.setFill(Color.ORANGERED);
+        
+        
     }
 }
