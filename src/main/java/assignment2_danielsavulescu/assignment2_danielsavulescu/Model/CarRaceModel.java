@@ -99,4 +99,16 @@ public class CarRaceModel {
     public boolean isRaceOver() {
         return finishOrder.size() == cars.size();
     }
+    
+    /**
+     * gets the winner of the car race
+     * @return the winner of the car race
+     */
+    public Car getWinner() {
+        if (finishOrder.size() == 0) {
+            return null;
+        } else {
+            return finishOrder.get(0);
+        }
+    }
 }
