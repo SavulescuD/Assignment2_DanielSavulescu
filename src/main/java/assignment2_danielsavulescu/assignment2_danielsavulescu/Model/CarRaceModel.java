@@ -68,4 +68,35 @@ public class CarRaceModel {
             car.setSpeed(getTrackDistance() / seconds);
         }
     }
+    
+    /**
+     * updates the position of the car
+     * @param car the car
+     * @param x the x position of the car
+     */
+    public void updateCarX(Car car, double x) {
+        car.setPosition(x, car.getY());
+    }
+    
+    /**
+     * registers the order of the car when finished
+     * @param car the car
+     * @return the finish place of the car
+     */
+    public int registerFinish(Car car) {
+        if (!car.isFinished()) {
+            finishOrder.add(car);
+            car.setFinishPlace(finishOrder.size());
+        }
+        
+        return car.getFinishPlace();
+    }
+    
+    /**
+     * determines whether the race is over
+     * @return true if it is over, false if it is ongoing
+     */
+    public boolean isRaceOver() {
+        return finishOrder.size() == cars.size();
+    }
 }

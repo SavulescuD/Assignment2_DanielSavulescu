@@ -15,7 +15,7 @@ public class Car {
     private double x;
     private double y;
     private double speed; //pixels per second
-    private double finishPlace; //0 means the car is still racing
+    private int finishPlace; //0 means the car is still racing
 
     public Car(String type, int number, String colorName, String colorHex, int lane) {
         this.type = type;
@@ -57,7 +57,7 @@ public class Car {
         return speed;
     }
 
-    public double getFinishPlace() {
+    public int getFinishPlace() {
         return finishPlace;
     }
 
@@ -74,7 +74,7 @@ public class Car {
         this.speed = speed;
     }
 
-    public void setFinishPlace(double finishPlace) {
+    public void setFinishPlace(int finishPlace) {
         this.finishPlace = finishPlace;
     }
 
