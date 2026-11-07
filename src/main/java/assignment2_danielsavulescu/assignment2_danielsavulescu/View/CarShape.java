@@ -7,6 +7,9 @@ import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -36,6 +39,14 @@ public class CarShape extends Group {
         Rectangle tailLight = new Rectangle(0, 22, 4, 5);
         tailLight.setFill(Color.ORANGERED);
         
-        
+        //Car number plate
+        Rectangle plate = new Rectangle(38, 19, 24, 12);
+        plate.setFill(Color.WHITE);
+        plate.setArcHeight(3);
+        plate.setArcWidth(3);
+        Text numberText = new Text(String.valueOf(number));
+        numberText.setFont(Font.font("Arial", FontWeight.BOLD, 11));
+        numberText.setX(50 - numberText.getLayoutBounds().getWidth() / 2);
+        numberText.setY(29);
     }
 }
