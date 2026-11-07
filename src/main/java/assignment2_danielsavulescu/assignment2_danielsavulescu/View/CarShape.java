@@ -5,6 +5,8 @@ import java.util.List;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -48,5 +50,25 @@ public class CarShape extends Group {
         numberText.setFont(Font.font("Arial", FontWeight.BOLD, 11));
         numberText.setX(50 - numberText.getLayoutBounds().getWidth() / 2);
         numberText.setY(29);
+        
+        getChildren().addAll(body, roof, window1, window2, headLight, tailLight, plate, numberText);
+        
+        //Wheels
+    }
+    
+    /**
+     * creates a wheel with a tire and a line from its center to the edge
+     * @param centerX the centerX of the wheel
+     * @param centerY the centerY of the wheel
+     * @return the wheel
+     */
+    private Node createWheel(double centerX, double centerY) {
+        Circle tire = new Circle(centerX, centerY, 6, Color.LIGHTGRAY);
+        tire.setStroke(Color.web("#1c1c1c"));
+        tire.setStrokeWidth(3);
+        Line spoke = new Line(centerX, centerY, centerX, centerY - 6);
+        spoke.setStroke(Color.DARKSLATEGRAY);
+        spoke.setStrokeWidth(1.8);
+        return new Group(tire, spoke);
     }
 }
