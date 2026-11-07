@@ -29,6 +29,7 @@ public class CarRaceModel {
         cars.add(new Car("Sports", 45, "Red", "e53935", 1));
         cars.add(new Car("Sedan", 78, "Green", "2e9e44", 2));
         cars.add(new Car("Roadster", 88, "Yellow", "f5b800", 3));
+        reset();
     }
 
     public List<Car> getCars() {
@@ -45,5 +46,26 @@ public class CarRaceModel {
      */
     public double getTrackDistance() {
         return FINISH_X - START_X - CAR_WIDTH;
+    }
+    
+    /**
+     * resets the states of each car
+     */
+    public void reset() {
+        finishOrder.clear();
+        for (Car car : cars) {
+            car.resetCarState(START_X, car.getLane() * LANE_HEIGHT + CAR_TOP_OFFSET);
+        }
+        randomizeSpeeds();
+    }
+    
+    /**
+     * randomizes the speeds of each car
+     */
+    public void randomizeSpeeds() {
+        for (Car car : cars) {
+            double seconds = MIN_SECONDS + random.nextDouble() * (MAX_SECONDS - MIN_SECONDS);
+            car.setSpeed(getTrackDistance() / seconds);
+        }
     }
 }
