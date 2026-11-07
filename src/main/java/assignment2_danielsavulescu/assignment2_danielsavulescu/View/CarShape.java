@@ -54,6 +54,12 @@ public class CarShape extends Group {
         getChildren().addAll(body, roof, window1, window2, headLight, tailLight, plate, numberText);
         
         //Wheels
+        Node frontWheel = createWheel(78, 34);
+        Node backWheel = createWheel(22, 34);
+        wheels.add(frontWheel);
+        wheels.add(backWheel);
+        
+        getChildren().addAll(frontWheel, backWheel);
     }
     
     /**
@@ -70,5 +76,9 @@ public class CarShape extends Group {
         spoke.setStroke(Color.DARKSLATEGRAY);
         spoke.setStrokeWidth(1.8);
         return new Group(tire, spoke);
+    }
+
+    public List<Node> getWheels() {
+        return wheels;
     }
 }
