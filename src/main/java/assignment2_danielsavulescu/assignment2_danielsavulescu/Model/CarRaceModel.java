@@ -23,4 +23,11 @@ public class CarRaceModel {
     private final List<Car> cars = new ArrayList<>();
     private final List<Car> finishOrder = new ArrayList<>();
     private final Random random = new Random();
+    
+    public CarRaceModel() {
+        cars.add(new Car("Muscle", 23, "Blue", "1e6fe8", 0));
+        cars.add(new Car("Sports", 45, "Red", "e53935", 1));
+        cars.add(new Car("Sedan", 78, "Green", "2e9e44", 2));
+        cars.add(new Car("Roadster", 88, "Yellow", "f5b800", 3));
+    }
 }
