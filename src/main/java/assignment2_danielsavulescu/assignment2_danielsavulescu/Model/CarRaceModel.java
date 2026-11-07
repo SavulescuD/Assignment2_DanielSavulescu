@@ -30,4 +30,20 @@ public class CarRaceModel {
         cars.add(new Car("Sedan", 78, "Green", "2e9e44", 2));
         cars.add(new Car("Roadster", 88, "Yellow", "f5b800", 3));
     }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public List<Car> getFinishOrder() {
+        return finishOrder;
+    }
+    
+    /**
+     * calculates the track distance of the race
+     * @return the track distance of the race
+     */
+    public double getTrackDistance() {
+        return FINISH_X - START_X - CAR_WIDTH;
+    }
 }
